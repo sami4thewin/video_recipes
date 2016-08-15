@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
 # Specify your gem's dependencies in video_recipes.gemspec
-# gemspec
+gemspec
 
-gem "require_all"
+# gem "require_all"
