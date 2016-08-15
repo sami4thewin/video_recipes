@@ -1,5 +1,6 @@
-# require 'nokogiri'
-# require 'pry'
+require 'nokogiri'
+require 'pry'
+require 'open-uri'
 
 require_relative "./video_recipes/version"
 require_relative './video_recipes/cli'
