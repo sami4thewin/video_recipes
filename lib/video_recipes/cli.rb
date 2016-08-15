@@ -17,6 +17,10 @@ class VideoRecipes::CLI
     # 2. Steak - Make steak.
     # DOC
     @recipes = VideoRecipes::Recipe.today
+    #this is a little trick by putting the (1) we don't have to put -1, it starts the index at 1.
+    @recipes.each.with_index(1) do |recipe, i|
+      puts "#{i}. #{recipe.name} - #{recipe.recipe}"
+    end
   end
 
   def menu
@@ -26,11 +30,12 @@ class VideoRecipes::CLI
       input = gets.strip.downcase
       #this is so if you put in a string, it won't read as an integer. This is because the .to_i value of a string is 0.
       if input.to_i > 0
-        puts @deals[input.to_i - 1]
+        the_recipe = @recipes[input.to_i - 1]
+        puts "#{the_recipe.name} - #{the_recipe.recipe}"
       elsif input == "list"
         list_recipes
       else
-        puts "Please enter valid command"    
+        puts "Please enter valid command"
       # case input
       # when "1"
       #   puts "More info on recipe 1..."
